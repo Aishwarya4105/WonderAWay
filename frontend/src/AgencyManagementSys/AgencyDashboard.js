@@ -23,7 +23,7 @@ const AgencyDashboard = () => {
     try {
         const token = localStorage.getItem("token");
 
-        const res = await fetch("http://localhost:5000/agency/packages", {
+        const res = await fetch("https://wonderaway-1.onrender.com/agency/packages", {
             headers: {
                 token: token
             }
@@ -55,7 +55,7 @@ const AgencyDashboard = () => {
 const fetchAgencyBookings = async () => {
     const token = localStorage.getItem('token');
     try {
-        const res = await fetch("http://localhost:5000/agency/bookings", {
+        const res = await fetch("https://wonderaway-1.onrender.com/agency/bookings", {
             headers: { "token": token }
         });
         if (res.ok) {
@@ -77,7 +77,7 @@ const fetchAgencyBookings = async () => {
         if (!window.confirm("Are you sure you want to delete this package?")) return;
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`http://localhost:5000/packages/${id}`, {
+            const res = await fetch(`https://wonderaway-1.onrender.com/packages/${id}`, {
                 method: "DELETE",
                 headers: { "token": token } // Required by auth middleware
             });
@@ -93,8 +93,8 @@ const fetchAgencyBookings = async () => {
         e.preventDefault();
         const token = localStorage.getItem('token');
         const url = isEditing 
-            ? `http://localhost:5000/packages/${currentId}` 
-            : "http://localhost:5000/packages";
+            ? `https://wonderaway-1.onrender.com/packages/${currentId}` 
+            : "https://wonderaway-1.onrender.com/packages";
         
         try {
             const res = await fetch(url, {
