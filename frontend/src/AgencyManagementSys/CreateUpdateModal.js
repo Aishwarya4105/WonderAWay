@@ -10,7 +10,7 @@ const CreateUpdateModal = ({ pkgToEdit, onClose, refreshPackages }) => {
   const [loading,setLoading]=useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // ✅ Fill data when editing
+ 
   useEffect(() => {
     if (pkgToEdit) {
       setTitle(pkgToEdit.title || "");
@@ -22,7 +22,7 @@ const CreateUpdateModal = ({ pkgToEdit, onClose, refreshPackages }) => {
   }, [pkgToEdit]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // ✅ works correctly now
+    e.preventDefault(); 
     setIsSubmitted(true);
 
     if (!title || !description || !days || !price || !image) {
@@ -31,8 +31,8 @@ const CreateUpdateModal = ({ pkgToEdit, onClose, refreshPackages }) => {
 
     const method = pkgToEdit ? "PUT" : "POST";
     const url = pkgToEdit
-      ? `http://localhost:5000/packages/${pkgToEdit._id}`
-      : "http://localhost:5000/packages";
+      ? `https://wonderaway-1.onrender.com/packages/${pkgToEdit._id}`
+      : "https://wonderaway-1.onrender.com/packages";
 
     try {
       setLoading(true);
@@ -50,8 +50,8 @@ const CreateUpdateModal = ({ pkgToEdit, onClose, refreshPackages }) => {
       }
 
       toast.success(pkgToEdit ? "Package updated!" : "Package created!");
-      refreshPackages(); // ✅ REFRESH LIST
-      onClose();         // ✅ CLOSE MODAL
+      refreshPackages();
+      onClose();        
     } catch (error) {
       toast.error("Server error");
     }

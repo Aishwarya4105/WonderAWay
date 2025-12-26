@@ -51,7 +51,7 @@ const UserPackages = ({ pkg }) => {
     }, []);
 
     const fetchPackages = async () => {
-        const res = await fetch("http://localhost:5000/packages");
+        const res = await fetch("https://wonderaway-1.onrender.com/packages");
         const data = await res.json();
         setPackages(data);
     };
@@ -60,7 +60,7 @@ const UserPackages = ({ pkg }) => {
         const token = localStorage.getItem('token');
         if (!token) return;
         try {
-            const res = await fetch("http://localhost:5000/wishlist", {
+            const res = await fetch("https://wonderaway-1.onrender.com/wishlist", {
                 headers: { "token": token }
 
             });
@@ -90,7 +90,7 @@ const UserPackages = ({ pkg }) => {
         if (!token) return toast.error("Please login first");
 
         try {
-            const res = await fetch("http://localhost:5000/wishlist/toggle", {
+            const res = await fetch("https://wonderaway-1.onrender.com/wishlist/toggle", {
                 method: "POST",
                 headers: { "Content-Type": "application/json", "token": token },
                 body: JSON.stringify({
@@ -122,48 +122,7 @@ const UserPackages = ({ pkg }) => {
         <div className='user-pkg-container'>
             <div className="user-pkg-header">
 
-                {/*<div className="hero-search">
-                    <input
-                        type="text"
-                        placeholder="Find your next unforgettable journey"
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                    />
-
-                </div>
-
-                <h1 >Explore the latest packages</h1>
-                {/*<Link to="/wishlist" className="wish-link">
-                    View Wishlist ({wishlistIds.length})
-                </Link>
-            </div>
-
-            <div className="user-pkg">
-                {/*{packages.map((pkg) => {
-                    const isLiked = wishlistIds.includes(pkg._id);
-                    return (
-                        <div key={pkg._id} className="user-pkg-card">
-                            <div style={{ position: 'relative', height: '220px' }}>
-                                <img src={pkg.image} alt={pkg.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                                <button onClick={() => toggleWishlist(pkg)} className='heartbtn'>
-                                    <svg width="22" height="22" viewBox="0 0 24 24"
-                                        fill={isLiked ? "#e74c3c" : "none"}
-                                        stroke={isLiked ? "#e74c3c" : "#555"}
-                                        strokeWidth="2">
-                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.84-8.84 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div style={{ padding: '20px' }}>
-                                <h3>{pkg.title}</h3>
-                                <p>₹{pkg.price}</p>
-                                <p>{pkg.days}/days</p>
-                                <p>{pkg.description}</p>
-                                <button className='booknowbtn' onClick={() => handleBookNow(pkg)}>Book Now</button>
-                            </div>
-                        </div>
-                    );
-                })}*/}
+                
                 <div className="hero-search">
                     <input
                         type="text"
