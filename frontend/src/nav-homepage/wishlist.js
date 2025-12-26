@@ -1,79 +1,4 @@
-/*import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
 
-const Wishlist = () => {
-    const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    const fetchWishlist = async () => {
-        const token = localStorage.getItem('token');
-        try {
-            const res = await fetch("http://localhost:5000/wishlist", {
-                headers: { "token": token }
-            });
-            const data = await res.json();
-            setItems(data);
-        } catch (err) {
-            toast.error("Failed to load wishlist");
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    useEffect(() => { fetchWishlist(); }, []);
-
-    const removeMe = async (packageId) => {
-        const token = localStorage.getItem('token');
-        const res = await fetch("http://localhost:5000/wishlist/toggle", {
-            method: "POST",
-            headers: { "Content-Type": "application/json", "token": token },
-            body: JSON.stringify({ packageId })
-        });
-        if (res.ok) {
-            setItems(items.filter(i => i.package_id !== packageId));
-            toast.info("Removed from wishlist");
-        }
-    };
-
-    if (loading) return <div style={{ padding: '50px', textAlign: 'center' }}>Loading...</div>;
-
-    return (
-        <div className='wishlist'>
-            <div className='wishlist-header'>
-                <h1>My Saved Packages</h1>
-                <Link to="/packages" className='wishlist-link'>← Back to Explore</Link>
-            </div>
-
-            {items.length === 0 ? (
-                <div className='wishlist-item-empty'>
-                    <h3>Your wishlist is empty!</h3>
-                    <p>Go back and add some travel destinations.</p>
-                </div>
-            ) : (
-                <div className='wishlist-item'>
-                    {items.map((item) => (
-                        <div  className='item-id' key={item._id} >
-                            <img src={item.image} alt={item.title} className='item-image' />
-                            <div className='item-content'>
-                                <h3>{item.title}</h3>
-                                <p >₹{item.price}</p>
-                                <button 
-                                    onClick={() => removeMe(item.package_id)}
-                                    style={{ width: '100%', padding: '10px', background: '#e74c3c', color: '#fff', border: 'none', borderRadius: '6px', cursor: 'pointer' }}
-                                >
-                                    Remove
-                                </button>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            )}
-        </div>
-    );
-};
-
-export default Wishlist;*/
 
 
 
@@ -92,7 +17,7 @@ const Wishlist = () => {
     const fetchWishlist = async () => {
         const token = localStorage.getItem('token');
         try {
-            const res = await fetch("http://localhost:5000/wishlist", {
+            const res = await fetch("https://wonderaway-1.onrender.com/wishlist", {
                 headers: { token }
             });
             const data = await res.json();
@@ -111,7 +36,7 @@ const Wishlist = () => {
     const removeFromWishlist = async (packageId) => {
         const token = localStorage.getItem('token');
         try {
-            const res = await fetch("http://localhost:5000/wishlist/toggle", {
+            const res = await fetch("https://wonderaway-1.onrender.com/wishlist/toggle", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
