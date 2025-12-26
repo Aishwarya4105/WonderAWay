@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended:true}))
 
 // Replace app.use(cors()); with this:
 app.use(cors({
-    origin: "http://localhost:3000", // or whatever port your frontend is on
+    origin: ["http://localhost:3000","https://wonderaway-frontend.onrender.com" ],// or whatever port your frontend is on
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
