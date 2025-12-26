@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+
+.close{
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+/* Full-screen overlay */
+.overlay {
+  position: fixed; /* float above all content */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* high to appear above main page */
+}
+
+/* The modal box */
+.modal {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  width: 360px; /* adjust as needed */
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10000;
+  animation: slideDown 0.3s ease-out; /* smooth entry */
+}
+
+/* Modal title */
+.modal .title {
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Input fields */
+.modal .input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.modal .input:focus {
+  border-color: #4CAF50;
+}
+.modal .error-msg {
+  color: #ff0000 !important; /* Forces the color to Red */
+  font-size: 12px;
+  text-align: left;
+  align-self: flex-start;  /* Keeps it on the left */
+  margin: -15px 0 10px 5px; /* Pulls it up and gives a small left gap */
+  text-decoration: none !important; /* Removes the underline */
+  display: block;
+}
+
+/* Buttons */
+.modal .btn {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.2s;
+}
+
+.modal .btn.blue {
+  background-color: #0077cc;
+  color: white;
+}
+
+.modal .btn.blue:hover {
+  background-color: #005fa3;
+}
+
+/* Back to home link */
+.modal p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.modal p:hover {
+  color: #000;
+}
+
+/* Slide-down animation */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+

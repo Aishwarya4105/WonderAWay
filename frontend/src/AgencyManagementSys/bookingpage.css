@@ -1,0 +1,107 @@
+/* Page wrapper */
+.booking-page {
+
+  max-width: 500px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading */
+.booking-page h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+/* Package summary box */
+.booking-page .package-summary {
+  background-color: #f4f6f8;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.booking-page .package-summary p {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #34495e;
+}
+
+/* Form */
+.booking-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Label */
+.booking-page label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Inputs & textarea */
+.booking-page input,
+.booking-page textarea {
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+/* Focus effect */
+.booking-page input:focus,
+.booking-page textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Readonly fields */
+.booking-page input[readonly] {
+  background-color: #ecf0f1;
+  cursor: not-allowed;
+}
+
+/* Textarea */
+.booking-page textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Submit button */
+.booking-page button {
+  margin-top: 10px;
+  padding: 12px;
+  background-color:#1a2b48;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover */
+.booking-page button:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .booking-page {
+    margin: 20px;
+    padding: 20px;
+  }
+}
