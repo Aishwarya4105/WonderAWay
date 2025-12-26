@@ -24,7 +24,7 @@ const TravelAgencyRegister = () => {
         e.preventDefault();
         setIsSubmitted(true);
         try {
-            const response = await fetch("http://localhost:5000/register/agency",
+            const response = await fetch("https://wonderaway-1.onrender.com/register/agency",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
