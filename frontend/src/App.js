@@ -47,22 +47,10 @@ export default function App() {
           
            <Route path="/packages" element={<UserPackages />} />
 
-          {/*<Route path="/login" element={<Login />} />
-          <Route path="/register/user" element={<IndividualRegister />} />
-          <Route path="/register/agency" element={<TravelAgencyRegister />} />
-          <Route path="/packages" element={<UserPackages />} />*/}
+         
         </Route>
 
-        {/* AGENCY ROUTES */}
-         {/* <Route path="/agencydashboard" element={<AgencyLayout />}>
-            <Route
-              index element={
-                <ProtectedAgency>
-                  <AgencyDashboard />
-                </ProtectedAgency>
-              }
-            />
-          </Route>*/}
+     
 
             {role !== "user" && (
   <>
